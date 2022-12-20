@@ -39,6 +39,7 @@ class Main extends Sprite
 	public static var menubpm:Float = 117;
 	public static var curSave:String = 'save';
 	public static var logAsked:Bool = false;
+	public static var skipSplash:Bool = true;
 	public static var focusMusicTween:FlxTween;
 	public static var hiddenSongs:Array<String> = ['gose', 'gose-classic', 'saness'];
 	public static var gjToastManager:GJToastManager = new GJToastManager();
@@ -78,7 +79,7 @@ class Main extends Sprite
 		FlxStudio.create();
 		#end
 
-		addChild(new FlxGame(0, 0, Caching, 1, 60, 60, true, false));
+		addChild(new FlxGame(1280, 720, Caching, 1, 60, skipSplash));
 		addChild(memoryMonitor);
 		addChild(fpsCounter);
 		addChild(gjToastManager);
